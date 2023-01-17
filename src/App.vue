@@ -21,15 +21,15 @@ export default {
     Nav,
   },
 
-  data() {
-    return {
-      user: null
-    }
-  },
-  async creates() {
-    const respone = await axios.get('user')
+  // data() {
+  //   return {
+  //     user: null
+  //   }
+  // },
+  // async creates() {
+  //   const respone = await axios.get('user')
 
-    this.$store.dispatch('user', respone.data)
-  }
+  //   this.$store.dispatch('user', respone.data)
+  // }
 };
 </script>

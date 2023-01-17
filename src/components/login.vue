@@ -78,9 +78,9 @@
           password: this.password,
         });
   
-        localStorage.setItem('token, respone.data.token')
-        this.$store.dispatch('user', response.data.token)
-        this.$router.push('/')
+        // localStorage.setItem('token, respone.data.token')
+        // this.$store.dispatch('user', response.data.token)
+        // this.$router.push('/')
       },
     },
   };

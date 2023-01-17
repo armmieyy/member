@@ -8,9 +8,9 @@
         <v-btn class="mr-5" text to="/">Login</v-btn>
         <v-btn class="mr-5" text to="/register">Sign up</v-btn>
       </ul>
-      <ul class="navbar-nav ml-auto" v-if="user">
+      <!-- <ul class="navbar-nav ml-auto" v-if="user">
         <v-btn class="mr-5" href="javascript:void(0)" text @click="handleClick">Log out</v-btn>
-      </ul>
+      </ul> -->
       <v-btn icon>
         <v-icon>mdi-account-cog</v-icon>
       </v-btn>
@@ -19,18 +19,18 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+// import { mapGetters } from 'vuex';
 export default {
   name: "Nav",
-  methods: {
-    handleClick() {
-      localStorage.removeItem('token')
-      this.$store.dispatch('user', null)
-      this.$router.push('/')
-    }
-  },
-  computed: {
-    ...mapGetters(['user'])
-  }
+  // methods: {
+  //   handleClick() {
+  //     localStorage.removeItem('token')
+  //     this.$store.dispatch('user', null)
+  //     this.$router.push('/')
+  //   }
+  // },
+  // computed: {
+  //   ...mapGetters(['user'])
+  // }
 };
 </script>
