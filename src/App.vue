@@ -1,32 +1,35 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+  <div>
+    <v-app>
+      <Nav/>
+      <div class="auth-wrapper">
+        <div class="auth-inner">
+          <router-view/>
+        </div>
+      </div>
+    </v-app>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import Nav from "./components/Nav.vue";
+import axios from "axios";
 
-nav {
-  padding: 30px;
-}
+export default {
+  name: "App",
+  components: {
+    Nav,
+  },
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  data() {
+    return {
+      user: null
+    }
+  },
+  async creates() {
+    const respone = await axios.get('user')
 
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+    this.$store.dispatch('user', respone.data)
+  }
+};
+</script>
